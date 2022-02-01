@@ -29,13 +29,12 @@ const confirmChoice = (foodArr) => {
 		if (err) return console.log(err);
 		if (res.answer.toLowerCase() === 'yes' || res.answer.toLowerCase() === 'y') {
 			console.log('The food place has been decied for you and it is....');
-			for (let x=0; x < 30; x++) {
-				console.log('............................................................................................................................................................................')
-			}
-			let lunch = foodArr[Math.floor(Math.random() * foodArr.length)];
-			console.log(lunch);
-			console.log('Are you happy with your choice?');
-			lunchConfirmed(foodArr, lunch);
+			setTimeout(() => {
+				let lunch = foodArr[Math.floor(Math.random() * foodArr.length)];
+				console.log(lunch);
+				console.log('Are you happy with your choice?');
+				lunchConfirmed(foodArr, lunch);
+			}, 3000)
 		} else {
 			lunchPicker();
 		}
@@ -49,13 +48,12 @@ const lunchConfirmed = (foodArr, lunch) => {
 			console.log(`Enjoy your lunch at ${lunch}!!`)
 		} else {
 			console.log('The food place has been decied for you and it is....');
-			for (let x=0; x < 30; x++) {
-				console.log('............................................................................................................................................................................')
-			}
-			let newLunch = foodArr[Math.floor(Math.random() * foodArr.length)];
-			console.log(newLunch);
-			console.log('Are you happy with your choice?');
-			lunchConfirmed(foodArr, newLunch);
+			setTimeout(() => {
+				let newLunch = foodArr[Math.floor(Math.random() * foodArr.length)];
+				console.log(newLunch);
+				console.log('Are you happy with your choice?');
+				lunchConfirmed(foodArr, newLunch);
+			}, 3000)
 		}
 	})
 }
